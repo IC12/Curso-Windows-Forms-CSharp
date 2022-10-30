@@ -1,0 +1,16 @@
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\bin\Release\WinFormsCurso.exe.config
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\bin\Release\WinFormsCurso.exe
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\bin\Release\WinFormsCurso.pdb
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.csproj.AssemblyReference.cache
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.Frm_DemonstracaoKey.resources
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.Frm_HelloWorld.resources
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.Frm_Mascara.resources
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.Frm_Principal.resources
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.Frm_ValidaCPF.resources
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.Frm_ValidaCPF2.resources
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.Frm_ValidaSenha.resources
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.Properties.Resources.resources
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.csproj.GenerateResource.cache
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.csproj.CoreCompileInputs.cache
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.exe
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.pdb

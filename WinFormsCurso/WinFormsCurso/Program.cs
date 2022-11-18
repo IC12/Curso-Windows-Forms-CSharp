@@ -22,7 +22,10 @@ namespace WinFormsCurso
             //Application.Run(new Frm_Mascara());
             //Application.Run(new Frm_ValidaCPF());
             //Application.Run(new Frm_ValidaCPF2());
-            Application.Run(new Frm_Principal());
+            //Application.Run(new Frm_Principal());
+            //Application.Run(new Frm_MenuPrincipal());
+            //Application.Run(new Frm_PrincipalMenu_MDI());
+            Application.Run(new Frm_PrincipalMenu_UC());
         }
     }
 }

@@ -26,6 +26,10 @@ namespace WinFormsCurso
             //Application.Run(new Frm_MenuPrincipal());
             //Application.Run(new Frm_PrincipalMenu_MDI());
             Application.Run(new Frm_PrincipalMenu_UC());
+            //Application.Run(new Frm_MouseEventos());
+            //Application.Run(new Frm_MouseCapture());
+            //Application.Run(new Frm_MouseCursor());
+            //Application.Run(new Frm_MenuFlutuante());
         }
     }
 }

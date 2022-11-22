@@ -1,6 +1,5 @@
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\bin\Release\CursoWinFormsBiblioteca.dll
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\bin\Release\CursoWinFormsBiblioteca.pdb
-C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\obj\Release\WinFormsBiblioteca.csproj.AssemblyReference.cache
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\obj\Release\WinFormsBiblioteca.csproj.CoreCompileInputs.cache
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\obj\Release\CursoWinFormsBiblioteca.dll
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\obj\Release\CursoWinFormsBiblioteca.pdb

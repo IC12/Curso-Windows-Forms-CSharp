@@ -82,11 +82,41 @@
     <Compile Include="Formulários Curso 2\Frm_Login.Designer.cs">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulários Curso 3\Frm_CadastroCliente_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formulários Curso 3\Frm_CadastroCliente_UC.Designer.cs">
+      <DependentUpon>Frm_CadastroCliente_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulários Curso 3\Frm_MenuFlutuante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulários Curso 3\Frm_MenuFlutuante.Designer.cs">
+      <DependentUpon>Frm_MenuFlutuante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_MenuPrincipal.Designer.cs">
       <DependentUpon>Frm_MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulários Curso 3\Frm_MouseCapture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulários Curso 3\Frm_MouseCapture.Designer.cs">
+      <DependentUpon>Frm_MouseCapture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulários Curso 3\Frm_MouseCursor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulários Curso 3\Frm_MouseCursor.Designer.cs">
+      <DependentUpon>Frm_MouseCursor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulários Curso 3\Frm_MouseEventos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulários Curso 3\Frm_MouseEventos.Designer.cs">
+      <DependentUpon>Frm_MouseEventos.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Principal.cs">
       <SubType>Form</SubType>
@@ -192,8 +222,23 @@
     <EmbeddedResource Include="Formulários Curso 2\Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulários Curso 3\Frm_CadastroCliente_UC.resx">
+      <DependentUpon>Frm_CadastroCliente_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulários Curso 3\Frm_MenuFlutuante.resx">
+      <DependentUpon>Frm_MenuFlutuante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_MenuPrincipal.resx">
       <DependentUpon>Frm_MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulários Curso 3\Frm_MouseCapture.resx">
+      <DependentUpon>Frm_MouseCapture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulários Curso 3\Frm_MouseCursor.resx">
+      <DependentUpon>Frm_MouseCursor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulários Curso 3\Frm_MouseEventos.resx">
+      <DependentUpon>Frm_MouseEventos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Principal.resx">
       <DependentUpon>Frm_Principal.cs</DependentUpon>
@@ -249,6 +294,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagens\Cadastros.png" />
+    <Content Include="Imagens\DeleteAll.png" />
+    <Content Include="Imagens\DeleteLeft.png" />
+    <Content Include="Imagens\DeleteRight.png" />
+    <Content Include="Imagens\DeleteTab.png" />
     <Content Include="Imagens\Frm_DemonstracaoKey.ico" />
     <Content Include="Imagens\Frm_DemonstracaoKey.png" />
     <Content Include="Imagens\Frm_HelloWorld.ico" />
@@ -265,6 +315,8 @@
     <Content Include="Imagens\icons8-query-80.ico" />
     <Content Include="Imagens\icons8-query-80.png" />
     <Content Include="Imagens\key.png" />
+    <Content Include="Imagens\money.png" />
+    <Content Include="Imagens\user.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CursoWinFormsBiblioteca\WinFormsBiblioteca.csproj">

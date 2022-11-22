@@ -29,3 +29,8 @@ C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinForms.csproj.CopyComplete
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.exe
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.pdb
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.Frm_CadastroCliente_UC.resources
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.Frm_MenuFlutuante.resources
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.Frm_MouseCapture.resources
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.Frm_MouseCursor.resources
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.Frm_MouseEventos.resources

@@ -29,6 +29,7 @@ namespace WinFormsCurso
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CadastroCliente_UC));
             this.Lbl_CPF = new System.Windows.Forms.Label();
             this.Lbl_NomeCliente = new System.Windows.Forms.Label();
             this.Lbl_NomePai = new System.Windows.Forms.Label();
@@ -51,25 +52,32 @@ namespace WinFormsCurso
             this.Txt_Codigo = new System.Windows.Forms.TextBox();
             this.Grp_Codigo = new System.Windows.Forms.GroupBox();
             this.Grp_DadosPessoais = new System.Windows.Forms.GroupBox();
+            this.Mask_CPF = new System.Windows.Forms.MaskedTextBox();
             this.Chk_TemPai = new System.Windows.Forms.CheckBox();
             this.Grp_Genero = new System.Windows.Forms.GroupBox();
             this.Rdb_Indefinido = new System.Windows.Forms.RadioButton();
             this.Rdb_Feminino = new System.Windows.Forms.RadioButton();
             this.Rdb_Masculino = new System.Windows.Forms.RadioButton();
             this.Grp_Endereco = new System.Windows.Forms.GroupBox();
+            this.Mask_CEP = new System.Windows.Forms.MaskedTextBox();
             this.Cmb_Estado = new System.Windows.Forms.ComboBox();
             this.Txt_Cidade = new System.Windows.Forms.TextBox();
             this.Lbl_Cidade = new System.Windows.Forms.Label();
             this.Grp_Outros = new System.Windows.Forms.GroupBox();
-            this.Mask_CPF = new System.Windows.Forms.MaskedTextBox();
-            this.Mask_CEP = new System.Windows.Forms.MaskedTextBox();
-            this.Mask_Telefone = new System.Windows.Forms.MaskedTextBox();
             this.Mask_RendaFamiliar = new System.Windows.Forms.MaskedTextBox();
+            this.Mask_Telefone = new System.Windows.Forms.MaskedTextBox();
+            this.Tls_Principal = new System.Windows.Forms.ToolStrip();
+            this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.ApagaToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.LimparToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.Grp_Codigo.SuspendLayout();
             this.Grp_DadosPessoais.SuspendLayout();
             this.Grp_Genero.SuspendLayout();
             this.Grp_Endereco.SuspendLayout();
             this.Grp_Outros.SuspendLayout();
+            this.Tls_Principal.SuspendLayout();
             this.SuspendLayout();
             // 
             // Lbl_CPF
@@ -251,7 +259,7 @@ namespace WinFormsCurso
             // Grp_Codigo
             // 
             this.Grp_Codigo.Controls.Add(this.Txt_Codigo);
-            this.Grp_Codigo.Location = new System.Drawing.Point(12, 15);
+            this.Grp_Codigo.Location = new System.Drawing.Point(12, 45);
             this.Grp_Codigo.Name = "Grp_Codigo";
             this.Grp_Codigo.Size = new System.Drawing.Size(227, 53);
             this.Grp_Codigo.TabIndex = 28;
@@ -270,12 +278,22 @@ namespace WinFormsCurso
             this.Grp_DadosPessoais.Controls.Add(this.Lbl_NomeMae);
             this.Grp_DadosPessoais.Controls.Add(this.Txt_NomeMae);
             this.Grp_DadosPessoais.Controls.Add(this.Lbl_CPF);
-            this.Grp_DadosPessoais.Location = new System.Drawing.Point(12, 74);
+            this.Grp_DadosPessoais.Location = new System.Drawing.Point(12, 104);
             this.Grp_DadosPessoais.Name = "Grp_DadosPessoais";
             this.Grp_DadosPessoais.Size = new System.Drawing.Size(685, 184);
             this.Grp_DadosPessoais.TabIndex = 29;
             this.Grp_DadosPessoais.TabStop = false;
             this.Grp_DadosPessoais.Text = "groupBox1";
+            // 
+            // Mask_CPF
+            // 
+            this.Mask_CPF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Mask_CPF.Location = new System.Drawing.Point(473, 76);
+            this.Mask_CPF.Mask = "000,000,000-00";
+            this.Mask_CPF.Name = "Mask_CPF";
+            this.Mask_CPF.Size = new System.Drawing.Size(207, 20);
+            this.Mask_CPF.TabIndex = 4;
             // 
             // Chk_TemPai
             // 
@@ -347,12 +365,21 @@ namespace WinFormsCurso
             this.Grp_Endereco.Controls.Add(this.Txt_Logradouro);
             this.Grp_Endereco.Controls.Add(this.Txt_Bairro);
             this.Grp_Endereco.Controls.Add(this.Txt_Complemento);
-            this.Grp_Endereco.Location = new System.Drawing.Point(12, 264);
+            this.Grp_Endereco.Location = new System.Drawing.Point(12, 296);
             this.Grp_Endereco.Name = "Grp_Endereco";
             this.Grp_Endereco.Size = new System.Drawing.Size(685, 150);
             this.Grp_Endereco.TabIndex = 18;
             this.Grp_Endereco.TabStop = false;
             this.Grp_Endereco.Text = "groupBox1";
+            // 
+            // Mask_CEP
+            // 
+            this.Mask_CEP.Location = new System.Drawing.Point(6, 39);
+            this.Mask_CEP.Mask = "00000-000";
+            this.Mask_CEP.Name = "Mask_CEP";
+            this.Mask_CEP.Size = new System.Drawing.Size(132, 20);
+            this.Mask_CEP.TabIndex = 10;
+            this.Mask_CEP.Leave += new System.EventHandler(this.Mask_CEP_Leave);
             // 
             // Cmb_Estado
             // 
@@ -386,38 +413,12 @@ namespace WinFormsCurso
             this.Grp_Outros.Controls.Add(this.Lbl_Telefone);
             this.Grp_Outros.Controls.Add(this.Lbl_RendaFamiliar);
             this.Grp_Outros.Controls.Add(this.Txt_Profissao);
-            this.Grp_Outros.Location = new System.Drawing.Point(12, 420);
+            this.Grp_Outros.Location = new System.Drawing.Point(12, 454);
             this.Grp_Outros.Name = "Grp_Outros";
             this.Grp_Outros.Size = new System.Drawing.Size(685, 111);
             this.Grp_Outros.TabIndex = 18;
             this.Grp_Outros.TabStop = false;
             this.Grp_Outros.Text = "groupBox1";
-            // 
-            // Mask_CPF
-            // 
-            this.Mask_CPF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Mask_CPF.Location = new System.Drawing.Point(473, 76);
-            this.Mask_CPF.Mask = "000,000,000-00";
-            this.Mask_CPF.Name = "Mask_CPF";
-            this.Mask_CPF.Size = new System.Drawing.Size(207, 20);
-            this.Mask_CPF.TabIndex = 4;
-            // 
-            // Mask_CEP
-            // 
-            this.Mask_CEP.Location = new System.Drawing.Point(6, 39);
-            this.Mask_CEP.Mask = "00000-000";
-            this.Mask_CEP.Name = "Mask_CEP";
-            this.Mask_CEP.Size = new System.Drawing.Size(132, 20);
-            this.Mask_CEP.TabIndex = 10;
-            // 
-            // Mask_Telefone
-            // 
-            this.Mask_Telefone.Location = new System.Drawing.Point(6, 36);
-            this.Mask_Telefone.Mask = "(00) 00000-0000";
-            this.Mask_Telefone.Name = "Mask_Telefone";
-            this.Mask_Telefone.Size = new System.Drawing.Size(313, 20);
-            this.Mask_Telefone.TabIndex = 16;
             // 
             // Mask_RendaFamiliar
             // 
@@ -427,16 +428,89 @@ namespace WinFormsCurso
             this.Mask_RendaFamiliar.Size = new System.Drawing.Size(313, 20);
             this.Mask_RendaFamiliar.TabIndex = 18;
             // 
+            // Mask_Telefone
+            // 
+            this.Mask_Telefone.Location = new System.Drawing.Point(6, 36);
+            this.Mask_Telefone.Mask = "(00) 00000-0000";
+            this.Mask_Telefone.Name = "Mask_Telefone";
+            this.Mask_Telefone.Size = new System.Drawing.Size(313, 20);
+            this.Mask_Telefone.TabIndex = 16;
+            // 
+            // Tls_Principal
+            // 
+            this.Tls_Principal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripButton,
+            this.openToolStripButton,
+            this.saveToolStripButton,
+            this.ApagaToolStripButton,
+            this.LimparToolStripButton});
+            this.Tls_Principal.Location = new System.Drawing.Point(0, 0);
+            this.Tls_Principal.Name = "Tls_Principal";
+            this.Tls_Principal.Size = new System.Drawing.Size(724, 25);
+            this.Tls_Principal.TabIndex = 30;
+            this.Tls_Principal.Text = "toolStrip1";
+            // 
+            // newToolStripButton
+            // 
+            this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripButton.Image")));
+            this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.newToolStripButton.Name = "newToolStripButton";
+            this.newToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.newToolStripButton.Text = "&New";
+            this.newToolStripButton.Click += new System.EventHandler(this.newToolStripButton_Click);
+            // 
+            // openToolStripButton
+            // 
+            this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
+            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.openToolStripButton.Name = "openToolStripButton";
+            this.openToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.openToolStripButton.Text = "&Open";
+            this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
+            // 
+            // saveToolStripButton
+            // 
+            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
+            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripButton.Name = "saveToolStripButton";
+            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.saveToolStripButton.Text = "&Save";
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
+            // 
+            // ApagaToolStripButton
+            // 
+            this.ApagaToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ApagaToolStripButton.Image = global::WinFormsCurso.Properties.Resources.ExcluirBarra;
+            this.ApagaToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ApagaToolStripButton.Name = "ApagaToolStripButton";
+            this.ApagaToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.ApagaToolStripButton.Text = "toolStripButton1";
+            this.ApagaToolStripButton.Click += new System.EventHandler(this.ApagaToolStripButton_Click);
+            // 
+            // LimparToolStripButton
+            // 
+            this.LimparToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.LimparToolStripButton.Image = global::WinFormsCurso.Properties.Resources.LimparBarra;
+            this.LimparToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.LimparToolStripButton.Name = "LimparToolStripButton";
+            this.LimparToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.LimparToolStripButton.Text = "toolStripButton1";
+            this.LimparToolStripButton.Click += new System.EventHandler(this.LimparToolStripButton_Click);
+            // 
             // Frm_CadastroCliente_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Tls_Principal);
             this.Controls.Add(this.Grp_Outros);
             this.Controls.Add(this.Grp_Endereco);
             this.Controls.Add(this.Grp_DadosPessoais);
             this.Controls.Add(this.Grp_Codigo);
             this.Name = "Frm_CadastroCliente_UC";
-            this.Size = new System.Drawing.Size(714, 548);
+            this.Size = new System.Drawing.Size(724, 590);
             this.Grp_Codigo.ResumeLayout(false);
             this.Grp_Codigo.PerformLayout();
             this.Grp_DadosPessoais.ResumeLayout(false);
@@ -447,7 +521,10 @@ namespace WinFormsCurso
             this.Grp_Endereco.PerformLayout();
             this.Grp_Outros.ResumeLayout(false);
             this.Grp_Outros.PerformLayout();
+            this.Tls_Principal.ResumeLayout(false);
+            this.Tls_Principal.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -489,5 +566,11 @@ namespace WinFormsCurso
         private System.Windows.Forms.MaskedTextBox Mask_CEP;
         private System.Windows.Forms.MaskedTextBox Mask_Telefone;
         private System.Windows.Forms.MaskedTextBox Mask_RendaFamiliar;
+        private System.Windows.Forms.ToolStrip Tls_Principal;
+        private System.Windows.Forms.ToolStripButton newToolStripButton;
+        private System.Windows.Forms.ToolStripButton openToolStripButton;
+        private System.Windows.Forms.ToolStripButton saveToolStripButton;
+        private System.Windows.Forms.ToolStripButton ApagaToolStripButton;
+        private System.Windows.Forms.ToolStripButton LimparToolStripButton;
     }
 }

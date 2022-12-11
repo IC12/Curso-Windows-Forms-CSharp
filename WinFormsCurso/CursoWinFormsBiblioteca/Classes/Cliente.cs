@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
+using CursoWinFormsBiblioteca.DataBases;
 
 namespace CursoWinFormsBiblioteca.Classes
 {
@@ -104,11 +106,106 @@ namespace CursoWinFormsBiblioteca.Classes
                     throw new Exception("CPF inválido!");
                 }
             }
+
+            #region "CRUD do Fichario
+
+            public void IncluirFichario(string Conexao)
+            {
+                string clienteJson = Cliente.SerializedClass(this);
+                Fichario F = new Fichario(Conexao);
+                if (F.status)
+                {
+                    F.Incluir(this.Id, clienteJson);
+                    if (!(F.status))
+                    {
+                        throw new Exception(F.msg);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.msg);
+                }
+            }
+
+            public Unit BuscarFichario(string id, string conexao)
+            {
+                Fichario F = new Fichario(conexao);
+                if (F.status)
+                {
+                    string clienteJson = F.Buscar(id);
+                    return Cliente.DesSerializedClass(clienteJson);
+                }
+                else
+                {
+                    throw new Exception(F.msg);
+                }
+            }
+
+            public void AlterarFichario(string conexao)
+            {
+                string clienteJson = Cliente.SerializedClass(this);
+                Fichario F = new Fichario(conexao);
+                if (F.status)
+                {
+                    F.Alterar(this.Id, clienteJson);
+                    if (!(F.status))
+                    {
+                        throw new Exception(F.msg);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.msg);
+                }
+            }
+
+            public void ExcluirFichario(string conexao)
+            {
+                Fichario F = new Fichario(conexao);
+                if (F.status)
+                {
+                    F.Excluir(this.Id);
+                    if (!(F.status))
+                    {
+                        throw new Exception(F.msg);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.msg);
+                }
+            }
+
+            public List<string> ListaFichario(string conexao)
+            {
+                Fichario F = new Fichario(conexao);
+                if (F.status)
+                {
+                    List<string> todosJson = F.BuscarTodos();
+                    return todosJson;
+                }
+                else
+                {
+                    throw new Exception(F.msg);
+                }
+            }
+
+            #endregion
         }
 
         public class List
         {
             public List<Unit> ListUnit { get; set; }
+        }
+
+        public static Unit DesSerializedClass(string vJson)
+        {
+            return JsonConvert.DeserializeObject<Unit>(vJson);
+        }
+
+        public static string SerializedClass(Unit unit)
+        {
+            return JsonConvert.SerializeObject(unit);
         }
     }
 }

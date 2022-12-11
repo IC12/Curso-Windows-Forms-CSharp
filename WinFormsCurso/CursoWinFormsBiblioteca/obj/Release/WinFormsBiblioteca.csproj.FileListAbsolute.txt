@@ -9,5 +9,4 @@ C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsB
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\bin\Release\Newtonsoft.Json.xml
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\bin\Release\Newtonsoft.Json.Bson.pdb
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\bin\Release\Newtonsoft.Json.Bson.xml
-C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\obj\Release\WinFormsBiblioteca.csproj.AssemblyReference.cache
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\obj\Release\WinFormsBiblioteca.csproj.CopyComplete

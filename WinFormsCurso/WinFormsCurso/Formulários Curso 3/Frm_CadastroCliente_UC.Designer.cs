@@ -72,6 +72,7 @@ namespace WinFormsCurso
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.ApagaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.LimparToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.Btn_Busca = new System.Windows.Forms.Button();
             this.Grp_Codigo.SuspendLayout();
             this.Grp_DadosPessoais.SuspendLayout();
             this.Grp_Genero.SuspendLayout();
@@ -249,8 +250,6 @@ namespace WinFormsCurso
             // 
             // Txt_Codigo
             // 
-            this.Txt_Codigo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Codigo.Location = new System.Drawing.Point(6, 19);
             this.Txt_Codigo.Name = "Txt_Codigo";
             this.Txt_Codigo.Size = new System.Drawing.Size(209, 20);
@@ -258,10 +257,11 @@ namespace WinFormsCurso
             // 
             // Grp_Codigo
             // 
+            this.Grp_Codigo.Controls.Add(this.Btn_Busca);
             this.Grp_Codigo.Controls.Add(this.Txt_Codigo);
             this.Grp_Codigo.Location = new System.Drawing.Point(12, 45);
             this.Grp_Codigo.Name = "Grp_Codigo";
-            this.Grp_Codigo.Size = new System.Drawing.Size(227, 53);
+            this.Grp_Codigo.Size = new System.Drawing.Size(319, 53);
             this.Grp_Codigo.TabIndex = 28;
             this.Grp_Codigo.TabStop = false;
             this.Grp_Codigo.Text = "groupBox1";
@@ -500,6 +500,16 @@ namespace WinFormsCurso
             this.LimparToolStripButton.Text = "toolStripButton1";
             this.LimparToolStripButton.Click += new System.EventHandler(this.LimparToolStripButton_Click);
             // 
+            // Btn_Busca
+            // 
+            this.Btn_Busca.Location = new System.Drawing.Point(221, 17);
+            this.Btn_Busca.Name = "Btn_Busca";
+            this.Btn_Busca.Size = new System.Drawing.Size(92, 23);
+            this.Btn_Busca.TabIndex = 2;
+            this.Btn_Busca.Text = "button1";
+            this.Btn_Busca.UseVisualStyleBackColor = true;
+            this.Btn_Busca.Click += new System.EventHandler(this.Btn_Busca_Click);
+            // 
             // Frm_CadastroCliente_UC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -572,5 +582,6 @@ namespace WinFormsCurso
         private System.Windows.Forms.ToolStripButton saveToolStripButton;
         private System.Windows.Forms.ToolStripButton ApagaToolStripButton;
         private System.Windows.Forms.ToolStripButton LimparToolStripButton;
+        private System.Windows.Forms.Button Btn_Busca;
     }
 }

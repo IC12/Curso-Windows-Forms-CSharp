@@ -173,7 +173,7 @@ namespace WinFormsCurso
                     conectarToolStripMenuItem.Enabled = false;
                     cadastrosToolStripMenuItem.Enabled = true;
 
-                    MessageBox.Show("Bem Vindo " + login + "!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Bem Vindo(a) " + login + "!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

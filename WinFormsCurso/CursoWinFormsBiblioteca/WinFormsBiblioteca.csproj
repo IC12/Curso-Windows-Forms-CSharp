@@ -51,6 +51,7 @@
     <Compile Include="Classes\Cep.cs" />
     <Compile Include="Classes\Cliente.cs" />
     <Compile Include="Cls_Uteis.cs" />
+    <Compile Include="DataBases\Fichario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

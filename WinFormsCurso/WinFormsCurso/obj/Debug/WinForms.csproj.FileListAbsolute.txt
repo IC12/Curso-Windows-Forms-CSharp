@@ -37,3 +37,4 @@ C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Debug\WinFormsCurso.Frm_Busca.resources

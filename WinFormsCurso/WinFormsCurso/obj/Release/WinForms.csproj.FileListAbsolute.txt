@@ -38,3 +38,6 @@ C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\bin\Release\Newtonsoft.Json.pdb
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\bin\Release\Newtonsoft.Json.xml
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Release\WinFormsCurso.Frm_Busca.resources
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\bin\Release\DataBases\Fichario.mdf
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\bin\Release\DataBases\Fichario_log.ldf
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\bin\Release\CursoWinFormsBiblioteca.dll.config

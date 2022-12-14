@@ -123,7 +123,7 @@ namespace WinFormsCurso
                 C = LeituraFormulario();
                 C.ValidaClasse();
                 C.ValidaComplemento();
-                C.IncluirFichario("C:\\Users\\Iara Camargos\\Documents\\Curso WindowsForms\\WinFormsCurso\\Fichario");
+                C.IncluirFicharioDB("Cliente");
                 MessageBox.Show("Identificador incluído com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 //string clienteJson = Cliente.SerializedClass(C);
@@ -167,7 +167,7 @@ namespace WinFormsCurso
                 try
                 {
                     Cliente.Unit C = new Cliente.Unit();
-                    C = C.BuscarFichario(Txt_Codigo.Text, "C:\\Users\\Iara Camargos\\Documents\\Curso WindowsForms\\WinFormsCurso\\Fichario");
+                    C = C.BuscarFicharioDB(Txt_Codigo.Text, "Cliente");
                     if (C == null)
                     {
                         MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -211,7 +211,7 @@ namespace WinFormsCurso
                     C = LeituraFormulario();
                     C.ValidaClasse();
                     C.ValidaComplemento();
-                    C.AlterarFichario("C:\\Users\\Iara Camargos\\Documents\\Curso WindowsForms\\WinFormsCurso\\Fichario");
+                    C.AlterarFicharioDB("Cliente");
                     MessageBox.Show("Identificador alterado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     //string clienteJson = Cliente.SerializedClass(C);
@@ -256,7 +256,7 @@ namespace WinFormsCurso
                 try
                 {
                     Cliente.Unit C = new Cliente.Unit();
-                    C = C.BuscarFichario(Txt_Codigo.Text, "C:\\Users\\Iara Camargos\\Documents\\Curso WindowsForms\\WinFormsCurso\\Fichario");
+                    C = C.BuscarFicharioDB(Txt_Codigo.Text, "Cliente");
                     if (C == null)
                     {
                         MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -268,7 +268,7 @@ namespace WinFormsCurso
                         Db.ShowDialog();
                         if (Db.DialogResult == DialogResult.Yes)
                         {
-                            C.ExcluirFichario("C:\\Users\\Iara Camargos\\Documents\\Curso WindowsForms\\WinFormsCurso\\Fichario");
+                            C.ExcluirFicharioDB("Cliente");
                             MessageBox.Show("Identificador excluído com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LimparFormulario();
                         }
@@ -478,35 +478,21 @@ namespace WinFormsCurso
             try
             {
                 Cliente.Unit C = new Cliente.Unit();
-                List<string> List = new List<string>();
-                List = C.ListaFichario("C:\\Users\\Iara Camargos\\Documents\\Curso WindowsForms\\WinFormsCurso\\Fichario");
-                if (List == null || List.Count == 0)
-                {
-                    MessageBox.Show("Base de dados vazia. Não existe nenhum identificador cadastrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    List<List<string>> ListaBusca = new List<List<string>>();
-                    for (int i = 0; i <= List.Count - 1; i++)
-                    {
-                        C = Cliente.DesSerializedClass(List[i]);
-                        ListaBusca.Add(new List<string> { C.Id, C.Nome });
-                    }
+                var ListaBusca = C.BuscarFicharioTodosDB("Cliente");
 
-                    Frm_Busca FB = new Frm_Busca(ListaBusca);
-                    FB.ShowDialog();
-                    if (FB.DialogResult == DialogResult.OK)
+                Frm_Busca FB = new Frm_Busca(ListaBusca);
+                FB.ShowDialog();
+                if (FB.DialogResult == DialogResult.OK)
+                {
+                    var idSelect = FB.idSelect;
+                    C = C.BuscarFicharioDB(idSelect, "Cliente");
+                    if (C == null)
                     {
-                        var idSelect = FB.idSelect;
-                        C = C.BuscarFichario(idSelect, "C:\\Users\\Iara Camargos\\Documents\\Curso WindowsForms\\WinFormsCurso\\Fichario");
-                        if (C == null)
-                        {
-                            MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        else
-                        {
-                            EscreveFormulario(C);
-                        }
+                        MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        EscreveFormulario(C);
                     }
                 }
             }

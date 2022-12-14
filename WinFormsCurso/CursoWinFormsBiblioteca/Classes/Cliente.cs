@@ -191,6 +191,105 @@ namespace CursoWinFormsBiblioteca.Classes
             }
 
             #endregion
+
+            #region "CRUD do FicharioDB Local DB
+
+            public void IncluirFicharioDB(string Conexao)
+            {
+                string clienteJson = Cliente.SerializedClass(this);
+                FicharioDB F = new FicharioDB(Conexao);
+                if (F.status)
+                {
+                    F.Incluir(this.Id, clienteJson);
+                    if (!(F.status))
+                    {
+                        throw new Exception(F.msg);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.msg);
+                }
+            }
+
+            public Unit BuscarFicharioDB(string id, string conexao)
+            {
+                FicharioDB F = new FicharioDB(conexao);
+                if (F.status)
+                {
+                    string clienteJson = F.Buscar(id);
+                    return Cliente.DesSerializedClass(clienteJson);
+                }
+                else
+                {
+                    throw new Exception(F.msg);
+                }
+            }
+
+            public void AlterarFicharioDB(string conexao)
+            {
+                string clienteJson = Cliente.SerializedClass(this);
+                FicharioDB F = new FicharioDB(conexao);
+                if (F.status)
+                {
+                    F.Alterar(this.Id, clienteJson);
+                    if (!(F.status))
+                    {
+                        throw new Exception(F.msg);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.msg);
+                }
+            }
+
+            public void ExcluirFicharioDB(string conexao)
+            {
+                FicharioDB F = new FicharioDB(conexao);
+                if (F.status)
+                {
+                    F.Excluir(this.Id);
+                    if (!(F.status))
+                    {
+                        throw new Exception(F.msg);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.msg);
+                }
+            }
+
+            public List<List<string>> BuscarFicharioTodosDB(string conexao)
+            {
+                FicharioDB F = new FicharioDB(conexao);
+                if (F.status)
+                {
+                    List<string> List = new List<string>();
+                    List = F.BuscarTodos();
+                    if (F.status)
+                    {
+                        List<List<string>> ListaBusca = new List<List<string>>();
+                        for (int i = 0; i <= List.Count - 1; i++)
+                        {
+                            Cliente.Unit C = Cliente.DesSerializedClass(List[i]);
+                            ListaBusca.Add(new List<string> { C.Id, C.Nome });
+                        }
+                        return ListaBusca;
+                    }
+                    else
+                    {
+                        throw new Exception(F.msg);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.msg);
+                }
+            }
+
+            #endregion
         }
 
         public class List

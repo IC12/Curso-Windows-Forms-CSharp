@@ -9,8 +9,8 @@ C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsB
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\bin\Debug\Newtonsoft.Json.Bson.pdb
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\bin\Debug\Newtonsoft.Json.Bson.xml
-C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\obj\Debug\WinFormsBiblioteca.csproj.AssemblyReference.cache
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\obj\Debug\WinFormsBiblioteca.csproj.CoreCompileInputs.cache
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\obj\Debug\WinFormsBiblioteca.csproj.CopyComplete
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\obj\Debug\CursoWinFormsBiblioteca.dll
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\obj\Debug\CursoWinFormsBiblioteca.pdb
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\CursoWinFormsBiblioteca\obj\Debug\WinFormsBiblioteca.csproj.AssemblyReference.cache

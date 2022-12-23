@@ -54,6 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ByteBankDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ByteBankDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FicharioDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -100,6 +105,12 @@
     </Compile>
     <Compile Include="Formulários Curso 3\Frm_MenuFlutuante.Designer.cs">
       <DependentUpon>Frm_MenuFlutuante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Agencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Agencia.Designer.cs">
+      <DependentUpon>Frm_Agencia.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Busca.cs">
       <SubType>Form</SubType>
@@ -241,6 +252,9 @@
     <EmbeddedResource Include="Formulários Curso 3\Frm_MenuFlutuante.resx">
       <DependentUpon>Frm_MenuFlutuante.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Agencia.resx">
+      <DependentUpon>Frm_Agencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Busca.resx">
       <DependentUpon>Frm_Busca.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,6 +310,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ByteBankDataSet.xsc">
+      <DependentUpon>ByteBankDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ByteBankDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ByteBankDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ByteBankDataSet.xss">
+      <DependentUpon>ByteBankDataSet.xsd</DependentUpon>
+    </None>
     <None Include="FicharioDataSet.xsc">
       <DependentUpon>FicharioDataSet.xsd</DependentUpon>
     </None>
@@ -340,6 +365,7 @@
     <Content Include="Imagens\Frm_ValidaCPF2.png" />
     <Content Include="Imagens\Frm_ValidaSenha.ico" />
     <Content Include="Imagens\Frm_ValidaSenha.png" />
+    <None Include="Imagens\icons8-bank-64.png" />
     <Content Include="Imagens\icons8-query-80.ico" />
     <Content Include="Imagens\icons8-query-80.png" />
     <Content Include="Imagens\key.png" />

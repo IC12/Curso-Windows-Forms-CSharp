@@ -80,6 +80,9 @@ namespace WinFormsCurso
             Tls_Principal.Items[4].ToolTipText = "Limpa dados da tela de entrada de dados";
 
             Btn_Busca.Text = "Buscar";
+            Grp_DataGrid.Text = "Clientes";
+            AtualizaGrid();
+
             LimparFormulario();
         }
 
@@ -123,8 +126,12 @@ namespace WinFormsCurso
                 C = LeituraFormulario();
                 C.ValidaClasse();
                 C.ValidaComplemento();
-                C.IncluirFicharioDB("Cliente");
+                //C.IncluirFichario("C:\\Users\\Iara Camargos\\Documents\\Curso WindowsForms\\WinFormsCurso\\Fichario");
+                //C.IncluirFicharioDB("Cliente");
+                //C.IncluirFicharioSQL("Cliente");
+                C.IncluirFicharioSQLRel();
                 MessageBox.Show("Identificador incluído com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AtualizaGrid();
 
                 //string clienteJson = Cliente.SerializedClass(C);
 
@@ -167,7 +174,7 @@ namespace WinFormsCurso
                 try
                 {
                     Cliente.Unit C = new Cliente.Unit();
-                    C = C.BuscarFicharioDB(Txt_Codigo.Text, "Cliente");
+                    C = C.BuscarFicharioSQLRel(Txt_Codigo.Text);
                     if (C == null)
                     {
                         MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -211,8 +218,9 @@ namespace WinFormsCurso
                     C = LeituraFormulario();
                     C.ValidaClasse();
                     C.ValidaComplemento();
-                    C.AlterarFicharioDB("Cliente");
+                    C.AlterarFicharioSQLRel();
                     MessageBox.Show("Identificador alterado com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AtualizaGrid();
 
                     //string clienteJson = Cliente.SerializedClass(C);
 
@@ -256,7 +264,7 @@ namespace WinFormsCurso
                 try
                 {
                     Cliente.Unit C = new Cliente.Unit();
-                    C = C.BuscarFicharioDB(Txt_Codigo.Text, "Cliente");
+                    C = C.BuscarFicharioSQLRel(Txt_Codigo.Text);
                     if (C == null)
                     {
                         MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -268,8 +276,9 @@ namespace WinFormsCurso
                         Db.ShowDialog();
                         if (Db.DialogResult == DialogResult.Yes)
                         {
-                            C.ExcluirFicharioDB("Cliente");
+                            C.ExcluirFicharioSQLRel();
                             MessageBox.Show("Identificador excluído com sucesso", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AtualizaGrid();
                             LimparFormulario();
                         }
                     }
@@ -325,11 +334,11 @@ namespace WinFormsCurso
             C.NomePai = Txt_NomePai.Text;
             if (Chk_TemPai.Checked)
             {
-                C.NaoTemPai = true;
+                C.NaoTemPai = 1;
             }
             else
             {
-                C.NaoTemPai = false;
+                C.NaoTemPai = 0;
             }
             if (Rdb_Masculino.Checked)
             {
@@ -344,6 +353,7 @@ namespace WinFormsCurso
                 C.Genero = 2;
             }
             C.Cpf = Mask_CPF.Text;
+            C.Cpf = Regex.Replace(C.Cpf, @"[^\d]", "");
 
             C.Cep = Mask_CEP.Text;
             C.Cep = Regex.Replace(C.Cep, "-", "");
@@ -379,7 +389,7 @@ namespace WinFormsCurso
             Txt_NomeCliente.Text = C.Nome;
             Txt_NomeMae.Text = C.NomeMae;
 
-            if (C.NaoTemPai == true)
+            if (C.NaoTemPai == 1)
             {
                 Chk_TemPai.Checked = true;
                 Txt_NomePai.Text = "";
@@ -404,6 +414,7 @@ namespace WinFormsCurso
             }
 
             Mask_CPF.Text = C.Cpf;
+            C.Cpf = Regex.Replace(C.Cpf, @"[^\d]", "");
 
             Mask_CEP.Text = C.Cep;
             C.Cep = Regex.Replace(C.Cep, "-", "");
@@ -478,14 +489,14 @@ namespace WinFormsCurso
             try
             {
                 Cliente.Unit C = new Cliente.Unit();
-                var ListaBusca = C.BuscarFicharioTodosDB("Cliente");
+                var ListaBusca = C.BuscarFicharioTodosSQLRel();
 
                 Frm_Busca FB = new Frm_Busca(ListaBusca);
                 FB.ShowDialog();
                 if (FB.DialogResult == DialogResult.OK)
                 {
                     var idSelect = FB.idSelect;
-                    C = C.BuscarFicharioDB(idSelect, "Cliente");
+                    C = C.BuscarFicharioSQLRel(idSelect);
                     if (C == null)
                     {
                         MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -534,6 +545,53 @@ namespace WinFormsCurso
             //{
             //    MessageBox.Show(F.msg, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
+        }
+
+        private void AtualizaGrid()
+        {
+            try
+            {
+                Cliente.Unit C = new Cliente.Unit();
+                var ListaBusca = C.BuscarFicharioTodosSQLRel();
+                Dg_Clientes.Rows.Clear();
+                for (int i = 0; i <= ListaBusca.Count - 1; i++)
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.CreateCells(Dg_Clientes);
+                    row.Cells[0].Value = ListaBusca[i][0].ToString();
+                    row.Cells[1].Value = ListaBusca[i][1].ToString();
+                    Dg_Clientes.Rows.Add(row);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Dg_Clientes_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = Dg_Clientes.SelectedRows[0];
+                string Id = row.Cells[0].Value.ToString();
+
+                Cliente.Unit C = new Cliente.Unit();
+                C = C.BuscarFicharioSQLRel(Id);
+                if (C == null)
+                {
+                    MessageBox.Show("Identificador não encontrado.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    EscreveFormulario(C);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

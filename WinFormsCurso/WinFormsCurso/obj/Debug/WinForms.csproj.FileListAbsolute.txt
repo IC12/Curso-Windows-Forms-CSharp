@@ -41,3 +41,4 @@ C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Debug\WinForms.csproj.CopyComplete
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Debug\WinFormsCurso.exe
 C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Debug\WinFormsCurso.pdb
+C:\Users\Iara Camargos\Documents\Curso WindowsForms\WinFormsCurso\WinFormsCurso\obj\Debug\WinFormsCurso.Frm_Agencia.resources
